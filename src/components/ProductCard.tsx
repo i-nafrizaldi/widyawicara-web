@@ -26,9 +26,9 @@ const ProductCard: FC<ProductCardProps> = ({
 }) => {
   return (
     <Link href={`/${productId}`}>
-      <Card>
+      <Card className="hover:shadow-lg transition-shadow duration-200">
         <CardHeader>
-          <div className=" relative h-[200px] w-full overflow-hidden rounded-md">
+          <div className="relative h-40 sm:h-48 md:h-56 w-full overflow-hidden rounded-md">
             <Image
               src={thumbnail}
               alt="thumbnail"
@@ -37,13 +37,20 @@ const ProductCard: FC<ProductCardProps> = ({
             />
           </div>
         </CardHeader>
-        <CardContent>
-          <Badge variant="outline" className="rounded-sm bg-green-100">
-            Stock:{stock}
+        <CardContent className="flex flex-col gap-2 p-3 md:p-4">
+          <Badge
+            variant="outline"
+            className="rounded-sm bg-green-100 text-xs md:text-sm "
+          >
+            <p className="text-center mx-auto">Stock: {stock}</p>
           </Badge>
-          <h2 className="line-clamp-2 text-lg">{name}</h2>
-          <h2 className="line-clamp-1 text-sm">{username}</h2>
-          <p className="line-clamp-3 text-xl font-black">
+          <h2 className="line-clamp-2 text-sm sm:text-base md:text-lg font-semibold">
+            {name}
+          </h2>
+          <h2 className="line-clamp-1 text-xs sm:text-sm md:text-base text-gray-500">
+            {username}
+          </h2>
+          <p className="line-clamp-3 text-base sm:text-lg md:text-xl font-black">
             {formatToCurrency(price)}
           </p>
         </CardContent>
