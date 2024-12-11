@@ -32,12 +32,14 @@ function Dashboard() {
   };
 
   return (
-    <div className="container min-h-screen p-10 flex flex-col gap-8">
-      <div className="w-full h-72 bg-stone-300 rounded-3xl place-content-center">
-        <p className="text-9xl font-black text-center ">DASHBOARD</p>
+    <div className="container min-h-screen p-4 sm:p-6 md:p-10 flex flex-col gap-6">
+      <div className="w-full h-48 sm:h-60 md:h-72 bg-stone-300 rounded-3xl flex items-center justify-center">
+        <p className="text-4xl sm:text-6xl md:text-9xl font-black text-center">
+          DASHBOARD
+        </p>
       </div>
 
-      <div className="flex ">
+      <div className="flex">
         <Button
           className="font-bold ml-auto"
           onClick={() => router.push("/dashboard/create")}
@@ -48,24 +50,24 @@ function Dashboard() {
 
       {isLoading && (
         <div className="flex justify-center items-center mt-4">
-          <Loader2 className=" animate-spin" />
+          <Loader2 className="animate-spin" />
         </div>
       )}
-      <section className=" grid grid-cols-5 gap-5">
-        {products.map((product, index) => {
-          return (
-            <ProductCard
-              key={index}
-              name={product.name}
-              stock={product.stock}
-              price={product.price}
-              thumbnail={product.thumbnail}
-              productId={product.id}
-              username={product.user.username}
-            />
-          );
-        })}
+
+      <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5">
+        {products.map((product, index) => (
+          <ProductCard
+            key={index}
+            name={product.name}
+            stock={product.stock}
+            price={product.price}
+            thumbnail={product.thumbnail}
+            productId={product.id}
+            username={product.user.username}
+          />
+        ))}
       </section>
+
       <div className="mx-auto">
         <Pagination
           total={meta?.total || 0}

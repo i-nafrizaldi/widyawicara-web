@@ -45,11 +45,13 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
   return (
     <main className="container mx-auto p-4 min-h-screen">
       <header className="flex flex-col gap-5">
-        <h1 className="text-4xl font-black">PRODUCT DETAIL</h1>
+        <h1 className="text-4xl md:text-left text-center font-black">
+          PRODUCT DETAIL
+        </h1>
         <Separator />
       </header>
 
-      <section className="grid grid-cols-2 gap-14 p-10">
+      <section className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-14 p-10">
         <div className="relative h-[400px] w-full">
           <Image
             src={product.thumbnail}
@@ -59,13 +61,13 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
           />
         </div>
 
-        <div className="space-y-4">
-          <h1 className="text-4xl font-bold">{product.name}</h1>
-          <h1 className="text-2xl">{product.user.username}</h1>
-          <p className="text-4xl font-black text-green-400">
+        <div className="md:space-y-4 space-y-1">
+          <h1 className="md:text-4xl text-xl font-bold">{product.name}</h1>
+          <h1 className="md:text-2xl text-lg">{product.user.username}</h1>
+          <p className="md:text-4xl text-xl font-black text-green-400">
             {formatToCurrency(product.price)}
           </p>
-          <p className="text-lg">Stock: {product.stock}</p>
+          <p className="md:text-lg text-sm">Stock: {product.stock}</p>
 
           {isOwner && (
             <div className="flex gap-4 mt-4">
