@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# README - Aplikasi Fullstack
 
-## Getting Started
+## Deskripsi Proyek
+Proyek ini adalah aplikasi autentikasi dan manajemen produk yang dibuat dengan teknologi modern untuk memenuhi kebutuhan tes. Aplikasi terdiri dari dua bagian utama:
 
-First, run the development server:
+1. **Frontend**: Dibangun menggunakan Next.js, Tailwind CSS, dan Redux untuk membuat antarmuka pengguna yang responsif dan dinamis.
+2. **Backend**: Dibangun menggunakan Express.js, Prisma ORM, dan JWT untuk menyediakan REST API yang aman dan efisien. Database yang digunakan adalah PostgreSQL.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Bagian Frontend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Teknologi yang Digunakan
+- **Framework**: Next.js
+- **UI Library**: Tailwind CSS
+- **State Management**: Redux
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Fitur
+1. **Registrasi**: Formulir pendaftaran dengan validasi input (nama, email, dan jenis kelamin).
+2. **Login**: Formulir login untuk mengakses profil pengguna dan manajemen produk.
+3. **Manajemen Produk**: CRUD produk melalui antarmuka pengguna.
+4. **Autentikasi JWT**: Melakukan permintaan API dengan header token JWT.
 
-## Learn More
+### Cara Menjalankan Frontend Secara Lokal
+1. Clone repositori ini.
+   ```bash
+   git clone https://github.com/i-nafrizaldi/widyawicara-web.git
+   ```
+2. Instal dependensi.
+   ```bash
+   npm install
+   ```
+3. Jalankan aplikasi.
+   ```bash
+   npm run dev
+   ```
+4. Buka di browser pada `http://localhost:3000`.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Bagian Backend
 
-## Deploy on Vercel
+### Teknologi yang Digunakan
+- **Framework**: Express.js
+- **ORM**: Prisma
+- **Autentikasi**: JSON Web Token (JWT)
+- **Database**: PostgreSQL
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Fitur
+1. **Registrasi Pengguna**: Endpoint untuk membuat akun baru.
+2. **Login Pengguna**: Endpoint untuk mendapatkan token JWT.
+3. **Profil Pengguna**: Endpoint untuk mengakses data pengguna dengan token JWT.
+4. **CRUD Produk**: Endpoint untuk membuat, membaca, memperbarui, dan menghapus data produk dengan autentikasi.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Cara Menjalankan Backend Secara Lokal
+1. Clone repositori ini.
+   ```bash
+   git clone https://github.com/i-nafrizaldi/widyawicara-api.git
+   ```
+2. Instal dependensi.
+   ```bash
+   npm install
+   ```
+3. Atur file konfigurasi di `.env`.
+   ```env
+   DATABASE_URL="postgresql://<user>:<password>@<host>:<port>/<database>"
+   JWT_SECRET="your_secret_key"
+   ```
+4. Migrasikan database dengan Prisma.
+   ```bash
+   npx prisma migrate dev
+   ```
+5. Jalankan server.
+   ```bash
+   npm run dev
+   ```
+6. Server berjalan di `http://localhost:8080`.
+
+### Dokumentasi API
+1. **Base URL**: `http://localhost:8080/api`
+2. **Endpoint Utama**:
+   - **POST** `/auth/register`: Mendaftarkan pengguna baru.
+   - **POST** `/auth/login`: Login dan mendapatkan token JWT.
+   - **GET** `/users`: Mengakses profil pengguna.
+   - **PATCH** `/users/:id`: Memperbarui profil pengguna.
+   - **CRUD Produk**:
+     - **POST** `/products`: Membuat produk baru.
+     - **GET** `/products`: Melihat semua produk.
+     - **GET** `/products/:id`: Melihat detail produk.
+     - **PATCH** `/products/:id`: Memperbarui produk.
+     - **DELETE** `/products/:id`: Menghapus produk.
+
+
+---
+
+## Deployment
+Aplikasi ini telah di-deploy ke:
+- **Frontend**: https://widyawicara-web.ivannafrizaldi.my.id/
+- **Backend**: https://widyawicara-api.ivannafrizaldi.my.id/api
+
+---
+
+**Nama**: IVAN NAFRIZALDI
+
+**Repo**: 
+- **FRONTEND**: https://github.com/i-nafrizaldi/widyawicara-web.git
+- **BACKEND**: https://github.com/i-nafrizaldi/widyawicara-api.git
+
