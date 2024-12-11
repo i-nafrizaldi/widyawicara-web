@@ -26,7 +26,7 @@ function Home() {
   return (
     <div className="container min-h-screen flex flex-col gap-8 mt-8">
       <div className="w-full h-72 bg-stone-300 rounded-3xl place-content-center">
-        <p className="text-9xl font-black text-center ">PRODUCTS</p>
+        <p className="text-9xl font-black text-center ">ALL PRODUCTS</p>
       </div>
 
       {isLoading && (
