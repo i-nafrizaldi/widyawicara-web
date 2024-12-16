@@ -51,13 +51,13 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         <Separator />
       </header>
 
-      <section className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-14 p-10">
+      <section className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-14 pt-4">
         <div className="relative h-[400px] w-full">
           <Image
             src={product.thumbnail}
             fill
             alt="Thumbnail image"
-            className="object-cover bg-slate-200 rounded-3xl"
+            className="object-contain rounded-3xl"
           />
         </div>
 
