@@ -28,11 +28,11 @@ const ProductCard: FC<ProductCardProps> = ({
     <Link href={`/${productId}`}>
       <Card className="hover:shadow-lg transition-shadow duration-200">
         <CardHeader>
-          <div className="relative h-40 sm:h-48 md:h-56 w-full overflow-hidden rounded-md">
+          <div className="relative h-44 sm:h-48 md:h-56 w-full overflow-hidden rounded-md">
             <Image
               src={thumbnail}
               alt="thumbnail"
-              className="object-cover"
+              className="object-contain"
               fill
             />
           </div>
